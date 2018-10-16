@@ -38,7 +38,7 @@ public class Online extends AppCompatActivity {
         onlinePlay = (Button) findViewById(R.id.OnlinePlay);
         calendar = Calendar.getInstance();
         loadQuestion(Common.gameModesNo);
-        time = 1539703980000L; //9:10pm
+        time = 1539705360000L; //9:10pm
         endtime = time + 180000;
         onlinePlay.setOnClickListener(new View.OnClickListener() {
             @Override

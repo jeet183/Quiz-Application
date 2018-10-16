@@ -6,15 +6,17 @@
         android:title="My Profile"
        android:visible="true" />
 
-    <item android:id="@+id/leaderboard"
+    <item
+        android:id="@+id/leaderboard"
         android:title="LeaderBoard"
        android:icon="@mipmap/leaderboard"
         android:visible="true"/>
 
-    <item android:id="@+id/logout"
-        android:title="Log Out"
+    <item
+        android:id="@+id/logout"
         android:icon="@mipmap/logout"
-        android:visible="true"/>
+        android:title="Log Out"
+        android:visible="true" />
 
 
 

@@ -1,5 +1,7 @@
 package com.example.jeetmishra.androidquizapp;
 
+import android.content.ClipData;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -10,12 +12,13 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 public class Home extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    private DrawerLayout mDrawerLayout;
-    private ActionBarDrawerToggle mToggle;
-    private android.support.v7.widget.Toolbar mToolbar;
+     DrawerLayout mDrawerLayout;
+     ActionBarDrawerToggle mToggle;
+    android.support.v7.widget.Toolbar mToolbar;
 
 
     @Override
@@ -26,7 +29,6 @@ public class Home extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
-
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -68,4 +70,14 @@ public class Home extends AppCompatActivity {
 
 
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (mToggle.onOptionsItemSelected(item)) {
+            return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
+
 }
