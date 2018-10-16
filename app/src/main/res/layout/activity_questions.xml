@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/LightestBlue"
+    tools:context=".Questions">
+
+
+<EditText
+android:id="@+id/QuestionEditText"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_alignParentStart="true"
+    android:layout_alignParentLeft="true"
+android:layout_alignParentTop="true"
+android:ems="10"
+android:hint="Question"
+android:inputType="textPersonName" />
+
+<EditText
+android:id="@+id/Option1EditText"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_alignParentStart="true"
+    android:layout_alignParentLeft="true"
+android:layout_below="@+id/QuestionEditText"
+android:ems="10"
+android:hint="Option1"
+android:inputType="textPersonName" />
+
+<EditText
+android:id="@+id/Option2EditText"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_alignParentStart="true"
+    android:layout_alignParentLeft="true"
+android:layout_below="@+id/Option1EditText"
+android:ems="10"
+android:hint="Option2"
+android:inputType="textPersonName" />
+
+<EditText
+android:id="@+id/Option3EditText"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_alignParentStart="true"
+    android:layout_alignParentLeft="true"
+android:layout_below="@+id/Option2EditText"
+android:ems="10"
+android:hint="Option3"
+android:inputType="textPersonName" />
+
+<EditText
+android:id="@+id/Option4EditText"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_alignParentStart="true"
+    android:layout_alignParentLeft="true"
+android:layout_below="@+id/Option3EditText"
+android:ems="10"
+android:hint="Option4"
+android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/AddQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="133dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginRight="120dp"
+        android:text="Add Question" />
+
+<EditText
+android:id="@+id/AnswerEditText"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_alignParentStart="true"
+    android:layout_alignParentLeft="true"
+android:layout_below="@+id/Option4EditText"
+android:ems="10"
+android:hint="Answer"
+    android:inputType="textPersonName"
+ />
+
+    <EditText
+        android:id="@+id/QuestionNoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/AnswerEditText"
+        android:ems="10"
+        android:hint="QuestionNo"
+        android:inputType="number"/>
+    <EditText
+        android:id="@+id/GameModeNoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/QuestionNoEditText"
+        android:ems="10"
+        android:hint="GameModeNo"
+        android:inputType="number"
+         />
+
+
+</RelativeLayout>

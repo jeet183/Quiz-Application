@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbackgroundapp"
+    tools:context=".NextScreen">
+
+    <Button
+        android:id="@+id/next2"
+        android:layout_width="170dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="96dp"
+        android:background="@color/LightestBlue3"
+        android:onClick="gotoHome"
+        android:text="Next"
+        android:textAppearance="@style/ThemeOverlay.AppCompat.Dark"
+        android:textColor="@color/NavyBlue"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/intro"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:text="Exciting game modes:"
+        android:textColor="@color/NavyBlue"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/no1"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="152dp"
+        android:text="Practice"
+        android:textColor="@color/NavyBlue"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/no2"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="210dp"
+        android:text="Head-To-Head"
+        android:textColor="@color/NavyBlue"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/no2"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="200dp"
+        android:text="Online"
+        android:textColor="@color/NavyBlue"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/no3"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="133dp"
+        android:text="Top the leaderboard"
+        android:textColor="@color/NavyBlue"
+        android:textSize="40sp" />
+
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/no3"
+        android:layout_marginEnd="26dp"
+        app:srcCompat="@drawable/leaderboard" />
+
+
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+
+        android:layout_above="@+id/no2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="45dp"
+        app:srcCompat="@drawable/headon" />
+
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/no2"
+        android:layout_marginEnd="53dp"
+        app:srcCompat="@drawable/online" />
+
+
+
+
+
+</RelativeLayout>

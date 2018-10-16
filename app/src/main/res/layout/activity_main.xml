@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbackgroundapp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/next1"
+        android:layout_width="170dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/LightestBlue3"
+        android:onClick="nextfunc"
+        android:text="Next"
+        android:textAppearance="@style/ThemeOverlay.AppCompat.Dark"
+        android:textColor="@color/NavyBlue"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/introduction"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="106dp"
+        android:layout_marginEnd="30dp"
+        android:text="Welcome to the Quiz App"
+        android:textColor="@color/NavyBlue"
+        android:textSize="60sp" />
+
+    <ImageView
+        android:layout_width="200dp"
+
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp"
+        app:srcCompat="@drawable/quiz" />
+
+</RelativeLayout>
