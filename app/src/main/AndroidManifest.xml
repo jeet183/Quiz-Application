@@ -26,7 +26,7 @@
         <activity android:name=".Done" />
         <activity android:name=".Online" />
         <activity android:name=".HeadOn" />
-        <activity android:name=".OnlinePlaying"></activity>
+        <activity android:name=".OnlinePlaying" />
     </application>
 
 </manifest>

@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.example.jeetmishra.androidquizapp.Common1.Common;
 import com.example.jeetmishra.androidquizapp.Model.QuestionScore;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 

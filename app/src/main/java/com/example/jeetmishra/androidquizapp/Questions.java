@@ -1,5 +1,6 @@
 package com.example.jeetmishra.androidquizapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -21,7 +22,7 @@ public class Questions extends AppCompatActivity {
     EditText Answer;
     EditText QuestionNo;
     EditText GameModeNo;
-    Button AddQuestion;
+    Button AddQuestion,AdminLogout;
 
     DatabaseReference databaseQuestions;
 
@@ -41,6 +42,15 @@ public class Questions extends AppCompatActivity {
         QuestionNo=(EditText) findViewById(R.id.QuestionNoEditText);
         GameModeNo=(EditText) findViewById(R.id.GameModeNoEditText);
         AddQuestion=(Button) findViewById(R.id.AddQuestion);
+        AdminLogout=(Button)findViewById(R.id.adminlogout);
+        AdminLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Questions.this, SignUp.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         AddQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

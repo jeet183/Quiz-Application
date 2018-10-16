@@ -11,7 +11,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.jeetmishra.androidquizapp.Common1.Common;
 import com.example.jeetmishra.androidquizapp.Interface.ItemClickListener;
@@ -75,7 +74,7 @@ public class GameModesFragment extends Fragment {
 
                       Common.gameModesNo= adapter.getRef(position).getKey();
                       int j = Integer.parseInt(Common.gameModesNo);
-                      Log.i("No",Common.gameModesNo);
+                      Log.i("No", Common.gameModesNo);
                       if(j==01) {
                           Intent intent = new Intent(getActivity(), Start.class);
                           startActivity(intent);

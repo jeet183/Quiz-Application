@@ -6,13 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jeetmishra.androidquizapp.Common1.Common;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class Playing extends AppCompatActivity implements View.OnClickListener{
 
@@ -79,14 +77,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
                 showQuestion(++index);
             }
             else {
-                Intent intent = new Intent(this,Done.class);
-                Bundle dataSend = new Bundle();
-                dataSend.putInt("SCORE",score);
-                dataSend.putInt("TOTAL",totalQuestion);
-                dataSend.putInt("CORRECT",Answer);
-                intent.putExtras(dataSend);
-                startActivity(intent);
-                finish();
+                Toast.makeText(Playing.this, "Keep Playing", Toast.LENGTH_SHORT).show();
             }
 
             txtScore.setText(String.format("%d",score));

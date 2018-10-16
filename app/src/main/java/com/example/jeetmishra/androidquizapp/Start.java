@@ -28,7 +28,7 @@ public class Start extends AppCompatActivity {
         setContentView(R.layout.activity_start);
         database = FirebaseDatabase.getInstance();
         questions = database.getReference("Questions");
-       loadQuestion(Common.gameModesNo);
+        loadQuestion(Common.gameModesNo);
         btnPlay = (Button) findViewById(R.id.Play);
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +49,10 @@ public class Start extends AppCompatActivity {
                 for(DataSnapshot postSnapshot : dataSnapshot.getChildren()){
                     Question ques = postSnapshot.getValue(Question.class);
                     Common.questionList.add(ques);
+
                 }
+                Collections.shuffle(Common.questionList);
+
             }
 
             @Override
@@ -57,6 +60,6 @@ public class Start extends AppCompatActivity {
 
             }
         });
-        Collections.shuffle(Common.questionList);
+
     }
 }
