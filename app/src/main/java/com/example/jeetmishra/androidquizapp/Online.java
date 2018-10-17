@@ -22,11 +22,11 @@ import java.util.Collections;
 public class Online extends AppCompatActivity {
     Button onlinePlay;
     Calendar calendar;
-    long time;
     long endtime;
-    long currenttime;
+    String stringtime;
+    long currenttime,time;
     FirebaseDatabase database;
-    DatabaseReference questions;
+    DatabaseReference questions,Time;
 
 
     @Override
@@ -35,10 +35,22 @@ public class Online extends AppCompatActivity {
         setContentView(R.layout.activity_online);
         database = FirebaseDatabase.getInstance();
         questions = database.getReference("Questions");
+        Time = database.getReference("Time");
         onlinePlay = (Button) findViewById(R.id.OnlinePlay);
         calendar = Calendar.getInstance();
         loadQuestion(Common.gameModesNo);
-        time = 1539705360000L; //9:10pm
+        Time.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                time = dataSnapshot.child("Online Time").getValue(Long.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+          //9:10pm
         endtime = time + 180000;
         onlinePlay.setOnClickListener(new View.OnClickListener() {
             @Override

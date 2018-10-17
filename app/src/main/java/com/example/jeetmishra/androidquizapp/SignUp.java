@@ -1,6 +1,7 @@
 package com.example.jeetmishra.androidquizapp;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -56,6 +57,13 @@ public class SignUp extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ProgressDialog dialog;
+                dialog = new ProgressDialog(SignUp.this);
+                dialog.setTitle("User");
+                dialog.setMessage("Please Wait");
+                dialog.show();
+
+
                 signIn(edtUser.getText().toString(),edtPassword.getText().toString());
             }
         });

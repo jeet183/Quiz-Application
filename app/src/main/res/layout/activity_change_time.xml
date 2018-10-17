@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screenbackground"
+    tools:context=".ChangeTime">
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="match_parent"
+        android:id="@+id/change_time_of_quiz"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:hint="Enter time in milliseconds"
+        android:textColorHint="@color/DeepSkyBlue"
+        android:inputType="number"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp" />
+
+
+    <Button
+        android:id="@+id/time_changer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="122dp"
+        android:layout_marginLeft="122dp"
+        android:layout_marginTop="128dp"
+        android:background="@color/NavyBlue"
+        android:text="Change Time"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/back3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/time_changer"
+        android:layout_alignLeft="@+id/time_changer"
+
+        android:layout_marginTop="197dp"
+        android:background="@color/NavyBlue"
+        android:text="Back"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/logout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/time_changer"
+        android:layout_alignLeft="@+id/time_changer"
+        android:background="@color/NavyBlue"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="244dp"
+        android:text="Log Out" />
+
+
+</RelativeLayout>

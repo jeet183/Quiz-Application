@@ -1,5 +1,6 @@
 package com.example.jeetmishra.androidquizapp;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,7 +23,7 @@ public class Questions extends AppCompatActivity {
     EditText Answer;
     EditText QuestionNo;
     EditText GameModeNo;
-    Button AddQuestion,AdminLogout;
+    Button AddQuestion,AdminLogout,changeTime;
 
     DatabaseReference databaseQuestions;
 
@@ -43,9 +44,24 @@ public class Questions extends AppCompatActivity {
         GameModeNo=(EditText) findViewById(R.id.GameModeNoEditText);
         AddQuestion=(Button) findViewById(R.id.AddQuestion);
         AdminLogout=(Button)findViewById(R.id.adminlogout);
+        changeTime = (Button) findViewById(R.id.time);
+        changeTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Questions.this,ChangeTime.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         AdminLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ProgressDialog dialog;
+                dialog = new ProgressDialog(Questions.this);
+                dialog.setTitle("User");
+                dialog.setMessage("Please Wait");
+                dialog.show();
+
                 Intent intent = new Intent(Questions.this, SignUp.class);
                 startActivity(intent);
                 finish();
