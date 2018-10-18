@@ -36,10 +36,10 @@ public class Online extends AppCompatActivity {
         setContentView(R.layout.activity_online);
         database = FirebaseDatabase.getInstance();
         questions = database.getReference("Questions");
-
         onlinePlay = (Button) findViewById(R.id.OnlinePlay);
         calendar = Calendar.getInstance();
-        loadQuestion(Common.gameModesNo);
+
+
         Time = database.getReference("Time").child("Online Time");
         Time.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -65,23 +65,37 @@ public class Online extends AppCompatActivity {
 
 
         onlinePlay.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 Log.i("Time in log",String.valueOf(time));
                 endtime = time + 180000;
-                currenttime = calendar.getTimeInMillis();
-                if(currenttime>=time&&currenttime<=endtime)
+                loadQuestion(Common.gameModesNo);
+                if(calendar.getTimeInMillis()>=time&&calendar.getTimeInMillis()<=endtime)
                 {
 
-                    Intent intent = new Intent(Online.this,OnlinePlaying.class);
-                    startActivity(intent);
-                    finish();
+                        Intent intent = new Intent(Online.this, OnlinePlaying.class);
+                        startActivity(intent);
+                        finish();
+
+
 
                 }
                 else
                 {
-                    Toast.makeText(Online.this,"Please wait!",Toast.LENGTH_SHORT).show();
+
+
+
+
+                     if(calendar.getTimeInMillis()<time) {
+                        Toast.makeText(Online.this, "The game has not started yet!", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(calendar.getTimeInMillis()>endtime)
+                    {
+                        Toast.makeText(Online.this, "The game has ended!", Toast.LENGTH_SHORT).show();
+                    }
                 }
+
             }
         });
 
@@ -98,7 +112,6 @@ public class Online extends AppCompatActivity {
                     Common.questionList.add(ques);
 
                 }
-                Collections.shuffle(Common.questionList);
 
             }
 

@@ -1,5 +1,6 @@
 package com.example.jeetmishra.androidquizapp;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +29,12 @@ public class ChangeTime extends AppCompatActivity {
         LogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ProgressDialog dialog;
+                dialog = new ProgressDialog(ChangeTime.this);
+                dialog.setTitle("User");
+                dialog.setMessage("Please Wait");
+                dialog.show();
+
                 Intent intent = new Intent(ChangeTime.this,SignUp.class);
                 startActivity(intent);
                 finish();
