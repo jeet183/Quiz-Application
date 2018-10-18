@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 
 public class LeaderBoardFragment extends Fragment {
-    View myFragment;
+        View myFragment;
 
     public static LeaderBoardFragment newInstance(){
         LeaderBoardFragment leaderBoardFragment = new LeaderBoardFragment();
