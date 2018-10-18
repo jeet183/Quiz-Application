@@ -1,20 +1,16 @@
 package com.example.jeetmishra.androidquizapp;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 class Home extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener{
@@ -22,7 +18,7 @@ class Home extends AppCompatActivity  implements NavigationView.OnNavigationItem
      DrawerLayout mDrawerLayout;
      ActionBarDrawerToggle mToggle;
     android.support.v7.widget.Toolbar mToolbar;
-    LeaderBoardFragment leaderBoardFragment = null;
+    RankingFragment rankingFragment = null;
 
 
     @Override
@@ -51,7 +47,7 @@ class Home extends AppCompatActivity  implements NavigationView.OnNavigationItem
 //                        selectedFragment = GameModesFragment.newInstance();
 //                        break;
 //                    case R.id.action_leaderboard:
-//                        selectedFragment = LeaderBoardFragment.newInstance();
+//                        selectedFragment = RankingFragment.newInstance();
 //                        break;
 //
 //
@@ -64,7 +60,7 @@ class Home extends AppCompatActivity  implements NavigationView.OnNavigationItem
 //
 //        });
 //      //  setNavigationViewListner();
-//        Fragment fragment = new LeaderBoardFragment();
+//        Fragment fragment = new RankingFragment();
 //        getSupportFragmentManager().beginTransaction()
 //                .replace(R.id.leaderboard, fragment, fragment.getClass().getSimpleName()).addToBackStack(null).commit();
 //        //setDefaultFragment();
@@ -108,8 +104,8 @@ class Home extends AppCompatActivity  implements NavigationView.OnNavigationItem
                         Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.leaderboard:
-                        if(selectedFragment==null)
-                            selectedFragment = new LeaderBoardFragment();
+
+                            selectedFragment =  RankingFragment.newInstance();
                         swapFragment(selectedFragment);
                         break;
                     case R.id.logout:

@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.example.jeetmishra.androidquizapp.Common1.Common;
 
+import java.util.Calendar;
+
 public class Playing extends AppCompatActivity implements View.OnClickListener{
 
     final static long INTERVAL=1000;
@@ -19,6 +21,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
     int progressValue=0;
 
     CountDownTimer mCountDown;
+    Calendar calendar;
 
     int index=0,score=0,thisQuestion=0,totalQuestion,Answer;
 
@@ -42,6 +45,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
         btnB=(Button)findViewById(R.id.btnAnswerB);
         btnC=(Button)findViewById(R.id.btnAnswerC);
         btnD=(Button)findViewById(R.id.btnAnswerD);
+        calendar =  Calendar.getInstance();
         done=(Button ) findViewById(R.id.done);
         done.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,10 +78,12 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
             {
                 score+=10;
                 Answer++;
+
                 showQuestion(++index);
             }
             else {
                 Toast.makeText(Playing.this, "Keep Playing", Toast.LENGTH_SHORT).show();
+                showQuestion(++index);
             }
 
             txtScore.setText(String.format("%d",score));
@@ -115,7 +121,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
     @Override
     protected void onResume() {
         super.onResume();
-        totalQuestion= Common.questionList.size();
+        totalQuestion=10;
         mCountDown = new CountDownTimer(TIMEOUT,INTERVAL) {
             @Override
             public void onTick(long minisec) {
@@ -127,6 +133,8 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
             @Override
             public void onFinish() {
             mCountDown.cancel();
+
+
             showQuestion(++index);
             }
 

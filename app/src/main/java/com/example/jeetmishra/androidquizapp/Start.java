@@ -46,19 +46,23 @@ public class Start extends AppCompatActivity {
         questions.orderByChild("gameModesNo").equalTo(gameModesNo).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot postSnapshot : dataSnapshot.getChildren()){
-                    Question ques = postSnapshot.getValue(Question.class);
-                    Common.questionList.add(ques);
+
+                    for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                        Question ques = postSnapshot.getValue(Question.class);
+
+                        Common.questionList.add(ques);
+
+
+                    }
+                    Collections.shuffle(Common.questionList);
 
                 }
-                Collections.shuffle(Common.questionList);
 
-            }
+                @Override
+                public void onCancelled (@NonNull DatabaseError databaseError){
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
 
-            }
         });
 
     }

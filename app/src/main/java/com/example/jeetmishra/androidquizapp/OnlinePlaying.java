@@ -106,7 +106,7 @@ public class OnlinePlaying extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onResume() {
         super.onResume();
-        totalQuestion= Common.questionList.size();
+        totalQuestion= 10;
         mCountDown = new CountDownTimer(TIMEOUT,INTERVAL) {
             @Override
             public void onTick(long minisec) {
