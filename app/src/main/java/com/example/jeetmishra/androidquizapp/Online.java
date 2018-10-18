@@ -69,7 +69,7 @@ public class Online extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.i("Time in log",String.valueOf(time));
-                endtime = time + 680000;
+                endtime = time + 120000;
                 loadQuestion(Common.gameModesNo);
                 if(calendar.getTimeInMillis()>=time&&calendar.getTimeInMillis()<=endtime)
                 {

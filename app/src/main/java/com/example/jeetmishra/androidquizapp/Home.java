@@ -1,5 +1,6 @@
 package com.example.jeetmishra.androidquizapp;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -108,7 +109,13 @@ class Home extends AppCompatActivity  implements NavigationView.OnNavigationItem
                             selectedFragment =  RankingFragment.newInstance();
                         swapFragment(selectedFragment);
                         break;
-                    case R.id.logout:
+                    case R.id.logout: ProgressDialog dialog;
+                        dialog = new ProgressDialog(Home.this);
+                        dialog.setTitle("User");
+                        dialog.setMessage("Please Wait");
+                        dialog.show();
+
+
                         Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(),com.example.jeetmishra.androidquizapp.SignUp.class);
                         startActivity(intent);

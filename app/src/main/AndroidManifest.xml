@@ -27,7 +27,8 @@
         <activity android:name=".Online" />
         <activity android:name=".HeadOn" />
         <activity android:name=".OnlinePlaying" />
-        <activity android:name=".ChangeTime"></activity>
+        <activity android:name=".ChangeTime" />
+        <activity android:name=".ScoreDetail"></activity>
     </application>
 
 </manifest>

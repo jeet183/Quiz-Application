@@ -73,6 +73,7 @@ public class GameModesFragment extends Fragment {
                   public void onClick(View view, int position, boolean isLongClick) {
 
                       Common.gameModesNo= adapter.getRef(position).getKey();
+                      Common.gameModesName = model.getName();
                       int j = Integer.parseInt(Common.gameModesNo);
                       Log.i("No", Common.gameModesNo);
                       if(j==01) {
