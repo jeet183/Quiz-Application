@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/LightestBlue"
+    android:background="@drawable/loginbackgroundapp"
     tools:context=".Questions">
 
 
@@ -68,12 +68,9 @@ android:inputType="textPersonName" />
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="133dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginRight="120dp"
+        android:background="@drawable/mybutton"
         android:text="Add Question" />
 
 <EditText
@@ -116,7 +113,8 @@ android:hint="Answer"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="12dp"
+        android:background="@color/LightestBlue3"
         android:text="Logout" />
 
     <Button
@@ -125,6 +123,8 @@ android:hint="Answer"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="72dp"
+        android:background="@drawable/mybutton"
         android:text="Change time of online quiz" />
 
 
