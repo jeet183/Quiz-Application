@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -23,7 +24,7 @@ public class Online extends AppCompatActivity {
     Button onlinePlay;
     Calendar calendar;
     long endtime;
-    String stringtime;
+
     long currenttime,time;
     FirebaseDatabase database;
     DatabaseReference questions,Time;
@@ -35,14 +36,19 @@ public class Online extends AppCompatActivity {
         setContentView(R.layout.activity_online);
         database = FirebaseDatabase.getInstance();
         questions = database.getReference("Questions");
-        Time = database.getReference("Time");
+
         onlinePlay = (Button) findViewById(R.id.OnlinePlay);
         calendar = Calendar.getInstance();
         loadQuestion(Common.gameModesNo);
-        Time.addValueEventListener(new ValueEventListener() {
+        Time = database.getReference("Time").child("Online Time");
+        Time.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                time = dataSnapshot.child("Online Time").getValue(Long.class);
+
+                String stringtime = dataSnapshot.getValue(String.class);
+                time = Long.parseLong(stringtime);
+                Log.i("Time in log",String.valueOf(time));
+
             }
 
             @Override
@@ -50,11 +56,19 @@ public class Online extends AppCompatActivity {
 
             }
         });
+     // DatabaseReference time_id = Time.child("Time").child("Online Time");
+
           //9:10pm
-        endtime = time + 180000;
+      // time = (Integer.parseInt(stringtime))
+
+
+
+
         onlinePlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.i("Time in log",String.valueOf(time));
+                endtime = time + 180000;
                 currenttime = calendar.getTimeInMillis();
                 if(currenttime>=time&&currenttime<=endtime)
                 {
@@ -95,5 +109,6 @@ public class Online extends AppCompatActivity {
         });
 
     }
+
     }
 

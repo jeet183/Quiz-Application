@@ -47,6 +47,8 @@ public class ChangeTime extends AppCompatActivity {
             public void onClick(View view) {
                 time = onlinetime.getText().toString();
                 databaseTime.child("Online Time").setValue(time);
+
+
                 onlinetime.getText().clear();
             }
         });
