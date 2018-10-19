@@ -62,6 +62,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
                 Bundle dataSend = new Bundle();
                 dataSend.putInt("SCORE",score);
                 dataSend.putInt("FirebaseScore",firebaseScore);
+                dataSend.putString("Online","Playing");
                 dataSend.putInt("TOTAL",totalQuestion);
                 dataSend.putInt("CORRECT",Answer);
                 done.putExtras(dataSend);

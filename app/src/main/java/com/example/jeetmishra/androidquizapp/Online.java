@@ -41,6 +41,7 @@ public class Online extends AppCompatActivity {
 
 
         Time = database.getReference("Time").child("Online Time");
+        loadQuestion(Common.gameModesNo);
         Time.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -48,6 +49,7 @@ public class Online extends AppCompatActivity {
                 String stringtime = dataSnapshot.getValue(String.class);
                 time = Long.parseLong(stringtime);
                 Log.i("Time in log",String.valueOf(time));
+                Toast.makeText(Online.this, String.valueOf(time), Toast.LENGTH_SHORT).show();
 
             }
 
@@ -68,9 +70,12 @@ public class Online extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Log.i("Time in log",String.valueOf(time));
-                endtime = time + 60000;
-                loadQuestion(Common.gameModesNo);
+                //Log.i("Time in log",String.valueOf(time));
+                //Toast.makeText(Online.this, "Online Play : "+String.valueOf(time), Toast.LENGTH_SHORT).show();
+                endtime = time + 30000;
+               // Toast.makeText(Online.this, "Online Endtime : "+String.valueOf(endtime), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Online.this, "Online CurrentTime : "+String.valueOf(calendar.getTimeInMillis()), Toast.LENGTH_SHORT).show();
+
                 if(calendar.getTimeInMillis()>=time&&calendar.getTimeInMillis()<=endtime)
                 {
 

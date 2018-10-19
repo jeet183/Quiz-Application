@@ -94,11 +94,13 @@ public class OnlinePlaying extends AppCompatActivity implements View.OnClickList
 
         }
         else {
+
             Intent intent = new Intent(OnlinePlaying.this,Done.class);
             Bundle dataSend = new Bundle();
             dataSend.putInt("SCORE",score);
             dataSend.putInt("TOTAL",totalQuestion);
             dataSend.putInt("CORRECT",Answer);
+            dataSend.putString("Online","OnlinePlaying");
             intent.putExtras(dataSend);
             startActivity(intent);
             finish();
