@@ -2,6 +2,7 @@ package com.example.jeetmishra.androidquizapp;
 
 import android.content.Intent;
 import android.os.CountDownTimer;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jeetmishra.androidquizapp.Common1.Common;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
@@ -24,17 +30,19 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
     Calendar calendar;
 
     int index=0,score=0,thisQuestion=0,totalQuestion,Answer;
-
+    static int firebaseScore = 0;
     ProgressBar progressBar;
     Button btnA,btnB,btnC,btnD,done;
     TextView txtScore,txtQuestionNum,question_text;
-
+    FirebaseDatabase database;
+    DatabaseReference question_score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playing);
-
+        database = FirebaseDatabase.getInstance();
+        question_score= database.getReference("Question_Score");
 
         txtScore=(TextView)findViewById(R.id.txtScore);
         txtQuestionNum=(TextView)findViewById(R.id.txtTotalQuestion);
@@ -53,6 +61,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
                 Intent done = new Intent(Playing.this,Done.class);
                 Bundle dataSend = new Bundle();
                 dataSend.putInt("SCORE",score);
+                dataSend.putInt("FirebaseScore",firebaseScore);
                 dataSend.putInt("TOTAL",totalQuestion);
                 dataSend.putInt("CORRECT",Answer);
                 done.putExtras(dataSend);
@@ -82,7 +91,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
                 showQuestion(++index);
             }
             else {
-                Toast.makeText(Playing.this, "Keep Playing", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Playing.this, "Wrong Answer", Toast.LENGTH_SHORT).show();
                 showQuestion(++index);
             }
 
@@ -108,8 +117,27 @@ public class Playing extends AppCompatActivity implements View.OnClickListener{
         }
         else {
             Intent intent = new Intent(Playing.this,Done.class);
+            question_score.child(String.format("%s_%s", Common.currentUser.getUserName(),
+                Common.gameModesNo)).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                String current_score = dataSnapshot.child("score").getValue(String.class).toString();
+                firebaseScore = Integer.parseInt(current_score);
+              //  score = score +firebaseScore;
+                //Toast.makeText(Playing.this, "Score On DataChange : "+String.format("%d",firebaseScore), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
             Bundle dataSend = new Bundle();
             dataSend.putInt("SCORE",score);
+            dataSend.putInt("FirebaseScore",firebaseScore);
+            dataSend.putString("Online","Playing");
+          //  Toast.makeText(this, "Intent Switch : "+String.valueOf(score), Toast.LENGTH_SHORT).show();
             dataSend.putInt("TOTAL",totalQuestion);
             dataSend.putInt("CORRECT",Answer);
             intent.putExtras(dataSend);

@@ -42,24 +42,14 @@
         android:textColor="@color/NavyBlue"
         android:textSize="35sp" />
 
+
     <TextView
         android:id="@+id/no2"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="201dp"
-        android:text="Head-To-Head"
-        android:textColor="@color/NavyBlue"
-        android:textSize="35sp" />
-
-    <TextView
-        android:id="@+id/no2"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="243dp"
+        android:layout_marginTop="224dp"
         android:text="Online"
         android:textColor="@color/NavyBlue"
         android:textSize="35sp" />
@@ -70,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="168dp"
+        android:layout_marginBottom="214dp"
         android:text="LeaderBoards"
         android:textColor="@color/NavyBlue"
         android:textSize="35sp" />
@@ -81,21 +71,10 @@
         android:layout_height="65dp"
 
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="157dp"
+        android:layout_marginBottom="205dp"
         android:layout_toEndOf="@+id/next2"
         app:srcCompat="@drawable/leaderboard" />
 
-
-    <ImageView
-        android:id="@+id/image2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="29dp"
-        android:layout_marginTop="209dp"
-        app:srcCompat="@drawable/headon" />
 
     <ImageView
         android:id="@+id/image2"

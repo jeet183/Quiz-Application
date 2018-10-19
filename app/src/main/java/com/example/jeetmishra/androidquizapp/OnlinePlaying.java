@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jeetmishra.androidquizapp.Common1.Common;
 
@@ -60,11 +61,12 @@ public class OnlinePlaying extends AppCompatActivity implements View.OnClickList
                 showQuestion(++index);
             }
             else {
-               // Toast.makeText(OnlinePlaying.this, "Keep Playing", Toast.LENGTH_SHORT).show();
+               Toast.makeText(OnlinePlaying.this, "Wrong Answer : You Are Eliminated!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(OnlinePlaying.this,Done.class);
                 Bundle dataSend = new Bundle();
                 dataSend.putInt("SCORE",score);
                 dataSend.putInt("TOTAL",totalQuestion);
+                dataSend.putString("Online","OnlinePlaying");
                 dataSend.putInt("CORRECT",Answer);
                 intent.putExtras(dataSend);
                 startActivity(intent);

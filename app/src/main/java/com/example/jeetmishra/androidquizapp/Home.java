@@ -14,6 +14,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.jeetmishra.androidquizapp.Model.GameModes;
+
 class Home extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener{
     BottomNavigationView bottomNavigationView;
      DrawerLayout mDrawerLayout;
@@ -102,7 +104,9 @@ class Home extends AppCompatActivity  implements NavigationView.OnNavigationItem
                 switch (id)
                 {
                     case R.id.profile:
-                        Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+                        selectedFragment =  GameModesFragment.newInstance();
+                        swapFragment(selectedFragment);
                         break;
                     case R.id.leaderboard:
 
